@@ -8,7 +8,7 @@ import (
 	"github.com/karlseguin/intset"
 )
 
-// TrimMode specifies which parts of string to trim for fastTrim()
+// TrimMode specifies which parts of string to trim for FastTrim()
 type TrimMode int
 
 const (
@@ -20,8 +20,8 @@ const (
 	TrimRight
 )
 
-// fastTrim works like strings.Trim but uses cutset of type *intset.Rune
-func fastTrim(s string, cutset *intset.Rune, mode TrimMode) string {
+// FastTrim works like strings.Trim but uses cutset of type *intset.Rune
+func FastTrim(s string, cutset *intset.Rune, mode TrimMode) string {
 	var startIdx, endIdx int
 	if mode != TrimRight {
 		// Trim left-hand side

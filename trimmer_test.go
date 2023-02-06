@@ -781,15 +781,15 @@ func TestFastTrim(t *testing.T) {
 	for _, s := range testCases {
 		expectedTrimBoth := strings.Trim(s.str, charsToTrim)
 		// Naughty String Index starts from 0
-		if output := fastTrim(s.str, cutset, TrimBoth); output != expectedTrimBoth {
+		if output := FastTrim(s.str, cutset, TrimBoth); output != expectedTrimBoth {
 			t.Errorf("Naughty String Index: %d | TrimBoth Output %q not equal to expected %q", s.idx, output, expectedTrimBoth)
 		}
 		expectedTrimLeft := strings.TrimLeft(s.str, charsToTrim)
-		if output := fastTrim(s.str, cutset, TrimLeft); output != expectedTrimLeft {
+		if output := FastTrim(s.str, cutset, TrimLeft); output != expectedTrimLeft {
 			t.Errorf("Naughty String Index: %d | TrimLeft Output %q not equal to expected %q", s.idx, output, expectedTrimLeft)
 		}
 		expectedTrimRight := strings.TrimRight(s.str, charsToTrim)
-		if output := fastTrim(s.str, cutset, TrimRight); output != expectedTrimRight {
+		if output := FastTrim(s.str, cutset, TrimRight); output != expectedTrimRight {
 			t.Errorf("Naughty String Index: %d | TrimRight Output %q not equal to expected %q", s.idx, output, expectedTrimRight)
 		}
 	}
@@ -797,24 +797,24 @@ func TestFastTrim(t *testing.T) {
 
 func BenchmarkFastTrim(b *testing.B) {
 	testCases := generateTestCases(naughtyStrings)
-	b.Run(fmt.Sprint("fastTrim"), func(b *testing.B) {
+	b.Run(fmt.Sprint("FastTrim"), func(b *testing.B) {
 		for i := 0; i < b.N; i++ {
 			for _, s := range testCases {
-				fastTrim(s.str, cutset, TrimBoth)
+				FastTrim(s.str, cutset, TrimBoth)
 			}
 		}
 	})
-	b.Run(fmt.Sprint("fastTrimLeft"), func(b *testing.B) {
+	b.Run(fmt.Sprint("FastTrimLeft"), func(b *testing.B) {
 		for i := 0; i < b.N; i++ {
 			for _, s := range testCases {
-				fastTrim(s.str, cutset, TrimLeft)
+				FastTrim(s.str, cutset, TrimLeft)
 			}
 		}
 	})
-	b.Run(fmt.Sprint("fastTrimRight"), func(b *testing.B) {
+	b.Run(fmt.Sprint("FastTrimRight"), func(b *testing.B) {
 		for i := 0; i < b.N; i++ {
 			for _, s := range testCases {
-				fastTrim(s.str, cutset, TrimRight)
+				FastTrim(s.str, cutset, TrimRight)
 			}
 		}
 	})
