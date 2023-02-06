@@ -97,3 +97,14 @@ FastTrimRight ▏ 167 🟩🟩🟩🟩🟩🟩
 
     TrimRight ▏ 382 🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥
 ```
+
+## Limitations
+
+The cutset (characters to be trimmed) must be initialized as `*intset.Rune` first. This incurs a small time cost.
+
+```go
+const charsToTrim string = "@👍🏽新 "
+var cutset *intset.Rune = MakeRuneSet(charsToTrim) // this incurs a small time cost
+```
+
+Use the Go Standard library if you only need to process a small amount of strings (10 strings or less) per given cutset. However, for larger amounts of strings per given cutset, **trimmer** will greatly outperform the standard library.
