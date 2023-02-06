@@ -795,6 +795,14 @@ func TestFastTrim(t *testing.T) {
 	}
 }
 
+func BenchmarkMakeRuneSet(b *testing.B) {
+	b.Run(fmt.Sprint("MakeRuneSet"), func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			MakeRuneSet(charsToTrim)
+		}
+	})
+}
+
 func BenchmarkFastTrim(b *testing.B) {
 	testCases := generateTestCases(naughtyStrings)
 	b.Run(fmt.Sprint("FastTrim"), func(b *testing.B) {

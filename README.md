@@ -80,7 +80,10 @@ make bench
 The following chart indicates total time taken to trim characters `@👍🏽新` from strings in <https://github.com/minimaxir/big-list-of-naughty-strings>. The strings have been modified to include prefix and/or suffix permutations with replacement of up to length 4 from the set `@👍🏽新`.
 
 ```text
+CPU: AMD Ryzen 7 5800X
 Time in milliseconds (ms) | Lower is better
+
+  MakeRuneSet ▏ .08
 
      FastTrim ▏ 252 🟩🟩🟩🟩🟩🟩🟩🟩🟩
 
