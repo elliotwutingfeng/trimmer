@@ -69,8 +69,28 @@ make tests
 make tests_without_race
 ```
 
-## Benchmarking
+## Benchmarks
 
 ```sh
 make bench
+```
+
+### Results
+
+The following chart indicates total time taken to trim characters `@👍🏽新` from strings in <https://github.com/minimaxir/big-list-of-naughty-strings>. The strings have been modified to include prefix and/or suffix permutations with replacement of up to length 4 from the set `@👍🏽新`.
+
+```text
+Time in milliseconds (ms) | Lower is better
+
+     FastTrim ▏ 252113130 🟩🟩🟩🟩🟩🟩🟩🟩🟩
+
+ FastTrimLeft ▏ 113125688 🟩🟩🟩🟩
+
+FastTrimRight ▏ 167844881 🟩🟩🟩🟩🟩🟩
+
+         Trim ▏ 680557952 🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥
+
+     TrimLeft ▏ 342457700 🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥
+
+    TrimRight ▏ 382173545 🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥
 ```
