@@ -1,10 +1,9 @@
 # trimmer
 
 [![Go Reference](https://img.shields.io/badge/go-reference-blue?logo=go&logoColor=white&style=for-the-badge)](https://pkg.go.dev/github.com/elliotwutingfeng/trimmer)
-[![Go Report Card](https://goreportcard.com/badge/github.com/elliotwutingfeng/trimmer?style=for-the-badge)](https://goreportcard.com/report/github.com/elliotwutingfeng/trimmer)
 [![Coveralls](https://img.shields.io/coverallsCoverage/github/elliotwutingfeng/trimmer?logo=coveralls&style=for-the-badge)](https://coveralls.io/github/elliotwutingfeng/trimmer?branch=main)
 
-[![GitHub license](https://img.shields.io/badge/LICENSE-BSD--3--CLAUSE-GREEN?style=for-the-badge)](LICENSE)
+[![License](https://img.shields.io/badge/LICENSE-BSD--3--CLAUSE-GREEN?style=for-the-badge)](LICENSE)
 
 ## Summary
 
